@@ -35,9 +35,9 @@ LinkList.prototype.removeHead = function() {
 LinkList.prototype.removeTail = function() {
 	if(!this.tail) return null;
 	var val = this.tail.value;
-	this.head = this.head.next;
-	if(this.head) this.head.prev = null;
-	else this.tail = null;
+	this.tail = this.tail.prev;
+	if(this.tail) this.tail.next = null;
+	else this.head = null;
 	return val;
 };
 
