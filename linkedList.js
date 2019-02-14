@@ -42,6 +42,29 @@ LinkList.prototype.removeTail = function() {
 };
 
 
+LinkList.prototype.search = function(searchValue) {
+	var currentNode = this.head;
+	while(currentNode) {
+		if(currentNode.value === searchValue) return currentNode.value;
+		currentNode = currentNode.next;
+	}
+	return null;
+}
+
+LinkList.prototype.indexOf = function(value) {
+	var indexes = [];
+	var currentIndex = 0;
+	var currentNode = this.head;
+	while(currentNode) {
+		if(currentNode.value === value) {
+			indexes.push(currentIndex);
+		}
+		currentNode = currentNode.next;
+		currentIndex++;
+	}
+	return indexes;
+}
+
 // var myLL = new LinkList();
 
 // myLL.addToTail(10);
